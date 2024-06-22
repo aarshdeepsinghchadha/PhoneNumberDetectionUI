@@ -1,0 +1,32 @@
+<div class="container-fluid d-flex align-items-center justify-content-center" style="height: 100vh;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1 class="display-3">Phone Number Detection</h1>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <!-- Text area for user input -->
+        <textarea class="form-control" rows="8" [(ngModel)]="textInput" placeholder="Enter text to detect phone numbers"></textarea>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3 text-center">
+        <!-- Detect button -->
+        <button class="btn btn-purple btn-lg mr-2" (click)="detectNumbers()" [disabled]="!isTextInputValid()">Detect Phone Numbers</button>
+        <!-- Clear button -->
+        <button class="btn btn-secondary btn-lg" (click)="clearText()" [disabled]="!textInput">Clear</button>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6 offset-md-3">
+        <!-- Text area to display detected numbers -->
+        <textarea class="form-control mt-4" rows="4" placeholder="Detected phone numbers will appear here" [readonly]="true">{{ detectedNumbers }}</textarea>
+      </div>
+    </div>
+  </div>
+</div>
